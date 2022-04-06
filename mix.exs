@@ -35,7 +35,8 @@ defmodule ElixirDemo.MixProject do
     [
       {:phoenix, "~> 1.6.6"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:ex_doc, "~> 0.14", only: :dev, runtime: false}
     ]
   end
 
