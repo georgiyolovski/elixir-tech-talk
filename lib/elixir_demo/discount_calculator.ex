@@ -4,6 +4,7 @@ defmodule ElixirDemo.DiscountCalculator do
 
   ## Examples:
 
+  ```
   iex> ElixirDemo.DiscountCalculator.calculate(%{"age" => 10})
   20
 
@@ -12,6 +13,7 @@ defmodule ElixirDemo.DiscountCalculator do
 
   iex> ElixirDemo.DiscountCalculator.calculate(%{"age" => 67})
   20
+  ```
   """
   def calculate(%{"age" => age}) when age < 18 or age > 65 do
     20
