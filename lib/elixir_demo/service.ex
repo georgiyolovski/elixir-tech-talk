@@ -13,31 +13,4 @@ defmodule ElixirDemo.Service do
       Repo.all()
     end
   end
-
-  # def users(params) do
-  #   case params do
-  #     %{"name" => ""} ->
-  #       %{"error" => "Invalid param"}
-
-  #     %{"name" => name} ->
-  #       Repo.all()
-  #       |> Enum.filter(fn user -> user.name == name end)
-
-  #     _ ->
-  #       Repo.all()
-  #   end
-  # end
-
-  # def users(%{"name" => ""}) do
-  #   %{"error" => "Invalid param"}
-  # end
-
-  # def users(%{"name" => name}) do
-  #   Repo.all()
-  #   |> Enum.filter(fn x -> x.name == name end)
-  # end
-
-  # def users(_) do
-  #   Repo.all()
-  # end
 end
