@@ -9,9 +9,10 @@ public class Application19 {
     long startTime = System.currentTimeMillis();
     System.out.println("Starting");
 
+    int processCount = 100_000;
     Executor executor = Executors.newVirtualThreadPerTaskExecutor();
     List<CompletableFuture<Void>> futures = new ArrayList<CompletableFuture<Void>>();
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < processCount; i++) {
       futures.add(CompletableFuture.runAsync(() -> {
         try {
           Thread.sleep(100);
@@ -21,7 +22,7 @@ public class Application19 {
       }, executor));
     }
 
-    CompletableFuture.allOf(futures.toArray(new CompletableFuture[100000])).join();
+    CompletableFuture.allOf(futures.toArray(new CompletableFuture[processCount])).join();
     
     long endTime = System.currentTimeMillis();
     System.out.println(String.format("Completed in %d s", (endTime - startTime) / 1000));
