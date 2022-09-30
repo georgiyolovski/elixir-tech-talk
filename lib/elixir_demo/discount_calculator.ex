@@ -1,25 +1,22 @@
 defmodule ElixirDemo.DiscountCalculator do
+
   @doc """
-  Calculate user discount based on age
+  Calculate discount based on user age
 
-  ## Examples:
-
+  Examples:
   ```
-  iex> ElixirDemo.DiscountCalculator.calculate(%{"age" => 10})
+  iex> ElixirDemo.DiscountCalculator.calculate(%{"age" => 15})
   20
 
-  iex> ElixirDemo.DiscountCalculator.calculate(%{"age" => 25})
+  iex> ElixirDemo.DiscountCalculator.calculate(%{"age" => 30})
   0
-
-  iex> ElixirDemo.DiscountCalculator.calculate(%{"age" => 67})
-  20
   ```
   """
-  def calculate(%{"age" => age}) when age < 18 or age > 65 do
+  def calculate(%{"age" => age}) when age < 18 do
     20
   end
 
-  def calculate(%{"age" => _}) do
+  def calculate(_) do
     0
   end
 end
