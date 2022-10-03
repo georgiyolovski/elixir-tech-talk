@@ -1,16 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 public class Application {
   public static void main(String[] args) {
     long startTime = System.currentTimeMillis();
     System.out.println("Starting...");
 
-    int processCount = 100_000;
-    Executor executor = Executors.newFixedThreadPool(1000);
+    int processCount = 10_000;
     List<CompletableFuture<Void>> futures = new ArrayList<CompletableFuture<Void>>();
     for (int i = 0; i < processCount; i++) {
       futures.add(CompletableFuture.runAsync(() -> {
@@ -19,7 +16,7 @@ public class Application {
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
-      }, executor));
+      }));
     }
 
     CompletableFuture.allOf(futures.toArray(new CompletableFuture[processCount])).join();
