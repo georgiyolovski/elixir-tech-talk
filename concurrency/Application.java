@@ -7,7 +7,7 @@ public class Application {
     long startTime = System.currentTimeMillis();
     System.out.println("Starting...");
 
-    int processCount = 10_000;
+    int processCount = 5_000;
     List<CompletableFuture<Void>> futures = new ArrayList<CompletableFuture<Void>>();
     for (int i = 0; i < processCount; i++) {
       futures.add(CompletableFuture.runAsync(() -> {
